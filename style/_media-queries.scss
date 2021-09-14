@@ -1,0 +1,46 @@
+@media screen and (max-width: 400px) {
+  body {
+    background-image: url(../images/pattern-hills-mobile.svg),
+      linear-gradient(360deg, hsl(235, 16%, 14%) 23%, hsl(234, 17%, 12%) 100%);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    // background-size: cover;
+    overflow: hidden;
+  }
+
+  img {
+    width: 100%;
+  }
+  h1 {
+    max-width: 20em;
+  }
+
+  .counter-cont.flex {
+    width: 100%;
+    justify-content: space-between;
+    margin: 0 auto;
+    position: relative;
+    .time-cont {
+      width: 4.25em;
+      height: 4.3em;
+      position: relative;
+      overflow: hidden;
+
+      &::before,
+      &::after {
+        content: "";
+        bottom: 42%;
+      }
+      &::after {
+        left: -7px;
+      }
+      &::before {
+        right: -7px;
+      }
+    }
+  }
+}
+
+span {
+  font-size: 2em;
+}
