@@ -15,6 +15,14 @@ body {
   text-transform: uppercase;
   font-size: 14px;
   font-family: "Red Hat Text", sans-serif;
+  letter-spacing: 5px;
+  background-image: linear-gradient(
+    360deg,
+    hsl(235, 16%, 14%) 23%,
+    hsl(234, 17%, 12%) 100%
+  );
+  background-repeat: no-repeat;
+  background-position: bottom;
 }
 
 .flex {
@@ -48,7 +56,7 @@ span {
 }
 
 .icons {
-  width: 7.5em;
+  width: 8em;
   justify-content: space-between;
   position: absolute;
   left: 0;
@@ -57,11 +65,27 @@ span {
   margin-right: auto;
   bottom: 0;
   margin-bottom: 4em;
-  font-size: 1.2em;
+  font-size: 1.5em;
+  z-index: 100;
   i {
     cursor: pointer;
     &:hover {
       color: $Soft-red;
     }
+  }
+}
+
+img {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  user-select: none;
+  &.stars {
+    position: position;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
   }
 }
