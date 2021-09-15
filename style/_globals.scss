@@ -42,7 +42,9 @@ span {
 .trans {
   transform: rotateX(180deg);
 }
-
+.trans2 {
+  transform: initial;
+}
 .cont2 {
   margin: 0 auto;
   flex-direction: column;

@@ -1,10 +1,14 @@
 let seconds = 10;
 let minutes = 55;
-let hours = 23;
-let days = 08;
+let hours = 03;
+let days = 2;
 let flipped = true;
 let flipped2 = true;
 let flipped3 = true;
+let flipped4 = true;
+
+let dayszero = false;
+let hourszero = false;
 
 let cardsec = document.getElementById("card-sec");
 let cardmin = document.getElementById("card-min");
@@ -22,15 +26,9 @@ let day2 = document.getElementById("day-2");
 
 setInterval(
   setInterval(function () {
-    secondsFunction();
-  }, 1000)
+    hoursFunction();
+  }, 100)
 );
-// setInterval(
-//   setInterval(function () {
-//     lolo2();
-//   }, 60000)
-// );
-
 sec1.innerHTML = seconds;
 sec2.innerHTML = seconds;
 min1.innerHTML = minutes;
@@ -50,11 +48,6 @@ function secondsFunction() {
   }
   if (flipped === true) {
     seconds -= 1;
-    // if (seconds.toString().length == 2) {
-    //   sec2.innerHTML = seconds;
-    // } else {
-    //   sec2.innerHTML = 0 + `${seconds}`;
-    // }
     seconds.toString().length == 2
       ? (sec2.innerHTML = seconds)
       : (sec2.innerHTML = 0 + `${seconds}`);
@@ -69,57 +62,64 @@ function secondsFunction() {
 }
 
 function minutesFunction() {
-  cardmin.classList.toggle("trans");
+  if (hourszero != true) {
+    cardmin.classList.toggle("trans");
 
-  if (minutes == 0) {
-    minutes = 60;
-    hoursFunction();
-  }
-  if (flipped2 === true) {
-    minutes -= 1;
-    minutes.toString().length == 2
-      ? (min2.innerHTML = minutes)
-      : (min2.innerHTML = 0 + `${minutes}`);
-    flipped2 = false;
-  } else {
-    minutes -= 1;
-    minutes.toString().length == 2
-      ? (min1.innerHTML = minutes)
-      : (min1.innerHTML = 0 + `${minutes}`);
-    flipped2 = true;
+    if (minutes == 0) {
+      minutes = 60;
+      hoursFunction();
+    }
+    if (flipped2 === true) {
+      minutes -= 1;
+      minutes.toString().length == 2
+        ? (min2.innerHTML = minutes)
+        : (min2.innerHTML = 0 + `${minutes}`);
+      flipped2 = false;
+    } else {
+      minutes -= 1;
+      minutes.toString().length == 2
+        ? (min1.innerHTML = minutes)
+        : (min1.innerHTML = 0 + `${minutes}`);
+      flipped2 = true;
+    }
   }
 }
 
 function hoursFunction() {
-  cardhour.classList.toggle("trans");
-
-  if (hours == 0) {
-    hours = 24;
-    daysFunction();
-  }
-  if (flipped3 === true) {
-    hours -= 1;
-    hour2.innerHTML = hours;
-    flipped3 = false;
-  } else {
-    hours -= 1;
-    hour1.innerHTML = hours;
-    flipped3 = true;
-  }
+  // do {
+  //   cardhour.classList.toggle("trans");
+  //   if (hours == 0) {
+  //     hours = 24;
+  //     daysFunction();
+  //   } else {
+  //     if (flipped3 === true) {
+  //       hours -= 1;
+  //       hour2.innerHTML = hours;
+  //       flipped3 = false;
+  //     } else {
+  //       hours -= 1;
+  //       hour1.innerHTML = hours;
+  //       flipped3 = true;
+  //     }
+  //   }
+  // } while (days !== 0);
 }
-function daysFunction() {
-  cardhour.classList.toggle("trans");
 
-  if (days == 0) {
-    days = 24;
-  }
-  if (flipped3 === true) {
-    hours -= 1;
-    hour2.innerHTML = hours;
-    flipped3 = false;
-  } else {
-    hours -= 1;
-    hour1.innerHTML = hours;
-    flipped3 = true;
+function daysFunction() {
+  if (days != 0) {
+    carddays.classList.toggle("trans");
+    if (days == 0) {
+      days = 0;
+    } else {
+      if (flipped4 === true) {
+        days -= 1;
+        day2.innerHTML = days;
+        flipped4 = false;
+      } else {
+        days -= 1;
+        day1.innerHTML = days;
+        flipped4 = true;
+      }
+    }
   }
 }
